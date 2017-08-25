@@ -1,0 +1,13 @@
+class ParseController < ApplicationController
+  def parse
+    x = Roo::Spreadsheet.open('data/movie.xlsx')
+    x.sheets
+    x.sheet('movie_metadata.csv').row(2)
+    x.sheet('movie_metadata.csv').column(2)
+    x.sheet('movie_metadata.csv').cell(3, 'C')
+    # first_row, last_row, first_column, last_column
+    x.sheet('movie_metadata.csv').each(title: 'movie_title', year: 'title_year') do |hash|
+      p hash
+    end
+  end
+end
