@@ -10,4 +10,13 @@ class ParseController < ApplicationController
       p hash
     end
   end
+
+  def upload
+  end
+
+  def receive
+    f = params[:woof]
+    e = Roo::Spreadsheet.open(f.tempfile)
+    @hashes = e.sheet('movie_metadata.csv').each(title: 'movie_title', year: 'title_year').map{|h| h}
+  end
 end

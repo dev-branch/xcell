@@ -30,6 +30,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem "roo"
+gem 'carrierwave'
 
 group :development, :test do
   gem 'pry'
