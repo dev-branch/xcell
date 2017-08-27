@@ -1,4 +1,12 @@
-<%= form_with(url: receive_path, local: true, html: { multipart: true }) do |f| %>
+<h1>single</h1>
+<%= form_with(url: single_path, local: true, html: { multipart: true }) do |f| %>
     <%= f.file_field :woof %>
+    <%= f.submit %>
+<% end %>
+
+
+<h1>multi</h1>
+<%= form_with(url: multi_path, local: true, html: { multipart: true }) do |f| %>
+    <%= f.file_field :purr, multiple: true %>
     <%= f.submit %>
 <% end %>
